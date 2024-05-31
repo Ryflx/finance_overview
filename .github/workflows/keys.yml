@@ -10,16 +10,6 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
-
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-
     - name: Use secrets in environment variables
       env:
         SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
